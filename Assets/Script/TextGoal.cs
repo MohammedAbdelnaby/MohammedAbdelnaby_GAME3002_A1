@@ -21,6 +21,7 @@ public class TextGoal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       //if you score at the other goal you lose score
         txt.text = "Score: " + (Score.GetComponent<Goal>().score - Score2.GetComponent<Goal>().score);
     }
 }

@@ -40,11 +40,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp("space"))
         {
             //shoot
+            //spawns the ball
             GameObject ball = Instantiate(Ball);
             ball.transform.position = new Vector3(SpawnPoint.transform.position.x, SpawnPoint.transform.position.y - 1.0f, SpawnPoint.transform.position.z);
             Vector3 angle = transform.forward;
+            //shoots the ball at the direction of the player
             force = new Vector3(angle.x * power, angle.y * power + UpPower, angle.z * power);
             ball.GetComponent<Rigidbody>().AddForce(force, ForceMode.Impulse);
+            //reseting the power for the next shot
             power = 0.0f;
             UpPower = 0.0f;
 
