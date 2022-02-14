@@ -9,6 +9,9 @@ public class TextGoal : MonoBehaviour
 
     [SerializeField]
     private GameObject Score;
+
+    [SerializeField]
+    private GameObject Score2;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,6 @@ public class TextGoal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        txt.text = "Score:" + Score.GetComponent<Goal>().score;
+        txt.text = "Score: " + (Score.GetComponent<Goal>().score - Score2.GetComponent<Goal>().score);
     }
 }
